@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <h3>Admin Dashboard</h3>
+      <nav>
+        <ul>
+          <li><a href="#">Quản lý lịch</a></li>
+          <li><a href="#">Quản lý dịch vụ</a></li>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a class="logout" href="../login/login.html">Đăng xuất</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <h2 class="main-title">Thống kê lịch tập</h2>
+
+      <section class="stats-container">
+        <div class="stat-box">
+          <p>Tổng số lịch Gym</p>
+          <span id="gymCount">0</span>
+        </div>
+        <div class="stat-box">
+          <p>Tổng số lịch Yoga</p>
+          <span id="yogaCount">0</span>
+        </div>
+        <div class="stat-box">
+           <p>Tổng số lịch Zumba</p>
+           <span id="zumbaCount">0</span>
+        </div>
+      </section>
+
+      <section class="chart-container">
+         <canvas id="chart"></canvas>
+      </section>
+
+      <section class="filter-container">
+         <h3>Bộ lọc</h3>
+         <div class="filter-controls">
+            <div class="filter-item">
+                <label for="classType">Lớp học</label>
+                <select id="classType">
+                  <option value="">Tất cả</option>
+                  <option value="Gym">Gym</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="Zumba">Zumba</option>
+                </select>
+            </div>
+             <div class="filter-item">
+                <label for="emailSearch">Email</label>
+                <input type="text" id="emailSearch" placeholder="Tìm theo email">
+             </div>
+             <div class="filter-item">
+                 <label for="dateFilter">Ngày</label>
+                 <input type="date" id="dateFilter">
+             </div>
+        </div>
+      </section>
+
+      <section class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Lớp học</th>
+                <th>Ngày tập</th>
+                <th>Khung giờ</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleTable">
+            </tbody>
+          </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

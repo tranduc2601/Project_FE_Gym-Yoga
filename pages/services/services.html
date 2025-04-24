@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Dịch vụ</title>
+    <link rel="stylesheet" href="services.css">
+    </head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h3>Admin Dashboard</h3>
+            <nav>
+                <ul>
+                    <li><a href="../dashboard/dashboard.html">Quản lý lịch</a></li>
+                    <li><a href="#" class="active">Quản lý dịch vụ</a></li> {/* Đánh dấu active */}
+                    <li><a href="../home/home.html">Trang chủ</a></li> {/* Liên kết đến trang chủ */}
+                    <li><a class="logout" href="../login/login.html">Đăng xuất</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <div class="content-header">
+                <h2 class="main-title">Quản lý Dịch vụ</h2>
+                <button class="btn btn-primary" id="addServiceBtn">Thêm dịch vụ mới</button>
+            </div>
+
+            <section class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên dịch vụ</th>
+                            <th>Mô tả</th>
+                            <th>Hình ảnh</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="serviceTableBody">
+                        {/* Dữ liệu dịch vụ sẽ được chèn vào đây bằng JavaScript */}
+                        <tr>
+                            <td colspan="4" style="text-align:center; padding: 20px; color: #6c757d;">Chưa có dịch vụ nào.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    {/* Optional: Link to services.js for functionality */}
+    {/* <script src="services.js"></script> */}
+</body>
+</html>

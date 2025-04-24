@@ -1,0 +1,185 @@
+/* Import common styles or copy base styles from dashboard.css */
+/* Assuming base styles for body, .dashboard-container, .sidebar, .main-content are similar */
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    display: flex;
+    min-height: 100vh;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styles (can be reused from dashboard.css or a common admin.css) */
+.sidebar {
+    width: 230px;
+    background-color: #212529;
+    color: #adb5bd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-size: 1.5em;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+/* Active sidebar link style */
+.sidebar nav ul li a.active {
+    background-color: #0d6efd; /* Blue background for active */
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.sidebar nav ul li a.logout {
+    color: #e57373;
+}
+
+.sidebar nav ul li a.logout:hover {
+    background-color: #d32f2f;
+    color: #ffffff;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex-grow: 1;
+    padding: 25px 35px;
+    background-color: #f8f9fa;
+    overflow-y: auto;
+}
+
+/* Content Header Styles */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f1ff; /* Light blue background */
+    padding: 15px 25px;
+    margin: -25px -35px 30px -35px; /* Extend to edges, add bottom margin */
+    border-bottom: 1px solid #cce0ff; /* Slightly darker blue border */
+}
+
+.main-title {
+    font-size: 1.6em; /* Slightly smaller title */
+    color: #0a58ca; /* Darker blue title text */
+    margin: 0;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 18px; /* Slightly smaller button */
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9em;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #0d6efd; /* Standard Bootstrap Blue */
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+/* Table Styles (can be reused/adapted from dashboard.css) */
+.table-container {
+     background-color: #ffffff;
+     border: 1px solid #dee2e6;
+     border-radius: 8px;
+     overflow-x: auto;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+table th, table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Add styles for action buttons within the table later if needed */
+/* e.g., edit/delete buttons */
+table td .action-btn {
+    margin-right: 5px;
+    padding: 5px 8px;
+    font-size: 0.85em;
+    border-radius: 4px;
+}
+.action-btn.edit { background-color: #ffc107; color: #333; }
+.action-btn.delete { background-color: #dc3545; color: #fff; }
+
+
+table tr:last-child td {
+   border-bottom: none;
+}
+
+/* Placeholder row style */
+tbody tr td[colspan="4"] {
+    text-align: center;
+    padding: 30px;
+    color: #6c757d;
+    font-style: italic;
+}

@@ -1,0 +1,263 @@
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d; 
+    color: #fff;
+    border: none;
+    font-size: 0.9em;
+    padding: 8px 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Header */
+.main-header {
+    background-color: #1F2937; 
+    color: #f8f9fa; 
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo p {
+    font-size: 23.9px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: #adb5bd;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 70vh; /* Adjust height as needed */
+    background-image: url('https://bizweb.dktcdn.net/100/011/344/files/tac-dung-cua-yoga.webp?v=1680778752047');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Popular Classes Section */
+.popular-classes-section {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+.popular-classes-section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #343a40;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.class-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures image corners are rounded if needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px; /* Space for button */
+    text-align: center;
+}
+
+.class-image {
+    height: 200px;
+    background-color: #e9ecef; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-style: italic;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#gym-image {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/031/691/648/small_2x/within-gym-with-modern-fitness-equipment-for-fitness-events-and-more-modern-of-gym-interior-with-equipment-sports-equipment-in-the-gym-created-with-generative-ai-photo.jpg'); 
+}
+#yoga-image {
+    background-image: url('https://cdn.prod.website-files.com/65302a23c6b1d938427b07fe/666c4a49e519be9e21c75d64_yoga%20blog%20photo.jpg'); 
+}
+#zumba-image {
+     background-image: url('https://static.vecteezy.com/system/resources/previews/000/126/255/non_2x/free-zumba-dancers-vector.jpg');
+}
+
+
+.class-card h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    color: #343a40;
+}
+
+.class-card p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    color: #6c757d;
+    flex-grow: 1;
+}
+
+.class-card .btn {
+    align-self: center;
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: #1F2937;
+    color: #adb5bd; /* Light text */
+    padding-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-column p {
+    font-size: 0.9em;
+    line-height: 1.7;
+}
+
+.social-links a {
+    margin-right: 15px;
+    color: #adb5bd;
+    transition: color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+.copyright-bar {
+    background-color: #212529; /* Even darker background */
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+.copyright-bar p {
+    margin: 0;
+    color: #6c757d; /* Medium grey text */
+}
