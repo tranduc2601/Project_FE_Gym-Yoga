@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý Dịch vụ</title>
-    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="../../common/css/base.css"> <link rel="stylesheet" href="services.css">
     </head>
 <body>
     <div class="dashboard-container">
@@ -13,12 +13,13 @@
             <nav>
                 <ul>
                     <li><a href="../dashboard/dashboard.html">Quản lý lịch</a></li>
-                    <li><a href="#" class="active">Quản lý dịch vụ</a></li> {/* Đánh dấu active */}
-                    <li><a href="../home/home.html">Trang chủ</a></li> {/* Liên kết đến trang chủ */}
+                    <li><a href="services.html" class="active">Quản lý dịch vụ</a></li>
+                    <li><a href="../schedule/schedule.html">Lịch tập</a></li> <li><a href="../home/home.html">Trang chủ</a></li>
                     <li><a class="logout" href="../login/login.html">Đăng xuất</a></li>
                 </ul>
             </nav>
         </aside>
+
         <main class="main-content">
             <div class="content-header">
                 <h2 class="main-title">Quản lý Dịch vụ</h2>
@@ -36,9 +37,8 @@
                         </tr>
                     </thead>
                     <tbody id="serviceTableBody">
-                        {/* Dữ liệu dịch vụ sẽ được chèn vào đây bằng JavaScript */}
                         <tr>
-                            <td colspan="4" style="text-align:center; padding: 20px; color: #6c757d;">Chưa có dịch vụ nào.</td>
+                            <td colspan="4" style="text-align:center; padding: 20px; color: #6c757d;">Đang tải hoặc chưa có dịch vụ nào.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -46,7 +46,45 @@
         </main>
     </div>
 
-    {/* Optional: Link to services.js for functionality */}
-    {/* <script src="services.js"></script> */}
-</body>
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+             <span class="close-button">&times;</span>
+            <h2 id="service-modal-title">Thêm Dịch Vụ Mới</h2>
+            <form id="service-form">
+                <input type="hidden" id="service-id"> <div class="form-group">
+                    <label for="service-name">Tên dịch vụ:</label>
+                    <input type="text" id="service-name" placeholder="Ví dụ: Gym Căn Bản" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-description">Mô tả:</label>
+                    <textarea id="service-description" rows="3" placeholder="Mô tả ngắn về dịch vụ" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="service-image-url">URL Hình ảnh:</label>
+                    <input type="url" id="service-image-url" placeholder="https://example.com/image.jpg" required>
+                    <small>Nhập đường dẫn URL đến hình ảnh.</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Lưu Dịch Vụ</button>
+                     </div>
+                 <p id="service-modal-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="delete-confirm-modal-service" class="modal">
+        <div class="modal-content small">
+            <span class="close-button">&times;</span>
+            <h2>Xác nhận xóa</h2>
+            <p>Bạn có chắc chắn muốn xóa dịch vụ này không?</p>
+            <div class="form-actions">
+                <button id="btn-confirm-delete-service" class="btn btn-danger">Xác nhận xóa</button>
+                <button type="button" class="btn btn-secondary close-button">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="services.js"></script>
+     </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css" />
+   <link rel="stylesheet" href="dashboard.css" />
 </head>
 <body>
   <div class="dashboard-container">
@@ -12,15 +12,26 @@
       <h3>Admin Dashboard</h3>
       <nav>
         <ul>
-          <li><a href="#">Quản lý lịch</a></li>
-          <li><a href="#">Quản lý dịch vụ</a></li>
-          <li><a href="#">Trang chủ</a></li>
-          <li><a class="logout" href="../login/login.html">Đăng xuất</a></li>
+          <li>
+            <a href="#" class="active">Quản lý lịch</a>
+          </li>
+          <li>
+            <a href="../services/services.html">Quản lý dịch vụ</a>
+          </li>
+          <li>
+            <a href="../schedule/schedule.html">Lịch tập</a>
+          </li>
+          <li>
+            <a href="../home/home.html">Trang chủ</a>
+          </li>
+          <li>
+            <a class="logout" href="../login/login.html">Đăng xuất</a>
+          </li>
         </ul>
       </nav>
     </aside>
     <main class="main-content">
-      <h2 class="main-title">Thống kê lịch tập</h2>
+       <h2 class="main-title">Thống kê lịch tập</h2>
 
       <section class="stats-container">
         <div class="stat-box">
@@ -77,7 +88,7 @@
               </tr>
             </thead>
             <tbody id="scheduleTable">
-            </tbody>
+                 </tbody>
           </table>
       </section>
     </main>

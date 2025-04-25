@@ -1,6 +1,4 @@
-/* Import common styles or copy base styles from dashboard.css */
-/* Assuming base styles for body, .dashboard-container, .sidebar, .main-content are similar */
-
+/* --- Base Styles (Assume common styles are linked or defined elsewhere) --- */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -26,7 +24,7 @@ a {
     width: 100%;
 }
 
-/* Sidebar Styles (can be reused from dashboard.css or a common admin.css) */
+/* --- Sidebar Styles --- */
 .sidebar {
     width: 230px;
     background-color: #212529;
@@ -41,20 +39,23 @@ a {
     color: #ffffff;
     margin-bottom: 35px;
     font-size: 1.5em;
+    font-weight: 600;
     text-align: left;
     padding-left: 10px;
 }
 
 .sidebar nav ul li {
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .sidebar nav ul li a {
     display: block;
-    padding: 12px 15px;
-    border-radius: 6px;
+    padding: 8px 15px;
+    border-radius: 4px;
     font-size: 0.95em;
     transition: background-color 0.2s ease, color 0.2s ease;
+    color: #e9ecef;
+    background-color: transparent;
 }
 
 .sidebar nav ul li a:hover {
@@ -62,23 +63,18 @@ a {
     color: #ffffff;
 }
 
-/* Active sidebar link style */
-.sidebar nav ul li a.active {
-    background-color: #0d6efd; /* Blue background for active */
+.sidebar nav ul li a.active { /* Style cho trang services */
+    background-color: transparent;
     color: #ffffff;
-    font-weight: 500;
-}
-
-.sidebar nav ul li a.logout {
-    color: #e57373;
+    font-weight: 600;
 }
 
 .sidebar nav ul li a.logout:hover {
-    background-color: #d32f2f;
-    color: #ffffff;
+   background-color: #343a40;
+   color: #ff0000;
 }
 
-/* Main Content Styles */
+/* --- Main Content Styles --- */
 .main-content {
     flex-grow: 1;
     padding: 25px 35px;
@@ -86,46 +82,48 @@ a {
     overflow-y: auto;
 }
 
-/* Content Header Styles */
+/* --- Content Header Styles --- */
 .content-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e7f1ff; /* Light blue background */
-    padding: 15px 25px;
-    margin: -25px -35px 30px -35px; /* Extend to edges, add bottom margin */
-    border-bottom: 1px solid #cce0ff; /* Slightly darker blue border */
+    padding: 0 0 15px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .main-title {
-    font-size: 1.6em; /* Slightly smaller title */
-    color: #0a58ca; /* Darker blue title text */
+    font-size: 1.8em;
+    color: #343a40;
     margin: 0;
     font-weight: 600;
 }
 
+/* --- General Button Styles --- */
 .btn {
     display: inline-block;
-    padding: 8px 18px; /* Slightly smaller button */
+    padding: 10px 20px;
     border-radius: 6px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: 500;
-    font-size: 0.9em;
+    font-size: 0.95em;
     border: none;
 }
+.btn-primary { background-color: #0d6efd; color: white;}
+.btn-primary:hover { background-color: #0b5ed7;}
+.btn-secondary { background-color: #6c757d; color: white;}
+.btn-secondary:hover { background-color: #5a6268;}
+.btn-danger { background-color: #dc3545; color: white;}
+.btn-danger:hover { background-color: #c82333;}
+.btn-edit { background-color: #ffc107; color: #333; padding: 5px 8px; font-size: 0.85em; margin-right: 5px; }
+.btn-delete { background-color: #dc3545; color: white; padding: 5px 8px; font-size: 0.85em; margin-right: 5px; }
+.btn-edit:hover { background-color: #e0a800; }
+.btn-delete:hover { background-color: #c82333; }
 
-.btn-primary {
-    background-color: #0d6efd; /* Standard Bootstrap Blue */
-    color: #fff;
-}
 
-.btn-primary:hover {
-    background-color: #0b5ed7;
-}
-
-/* Table Styles (can be reused/adapted from dashboard.css) */
+/* --- Table Styles --- */
 .table-container {
      background-color: #ffffff;
      border: 1px solid #dee2e6;
@@ -154,32 +152,191 @@ table th {
     font-size: 0.85em;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-bottom-width: 2px;
 }
 
 table tbody tr:hover {
     background-color: #f1f3f5;
 }
 
-/* Add styles for action buttons within the table later if needed */
-/* e.g., edit/delete buttons */
-table td .action-btn {
-    margin-right: 5px;
-    padding: 5px 8px;
-    font-size: 0.85em;
+#serviceTableBody img {
+    object-fit: cover;
     border-radius: 4px;
+    vertical-align: middle;
+    max-width: 100px;
+    height: auto;
 }
-.action-btn.edit { background-color: #ffc107; color: #333; }
-.action-btn.delete { background-color: #dc3545; color: #fff; }
-
 
 table tr:last-child td {
    border-bottom: none;
 }
 
-/* Placeholder row style */
-tbody tr td[colspan="4"] {
+#serviceTableBody td[colspan="4"] { /* Style cho placeholder */
     text-align: center;
     padding: 30px;
     color: #6c757d;
     font-style: italic;
 }
+
+/* ===== MODAL STYLES ===== */
+.modal {
+    /* --- SỬA LỖI Ở ĐÂY: Đổi flex thành none --- */
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.65);
+    /* Flexbox để căn giữa (sẽ được JS kích hoạt bằng cách đổi display thành flex) */
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */ /* Bỏ dòng này đi */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px 35px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    animation: fadeInModal 0.3s ease-out;
+}
+
+.modal-content.small {
+     max-width: 400px;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Nút X để đóng modal */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 0;
+}
+.close-button:hover, .close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #212529;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Form Styles within Modal */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group small {
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-top: 3px;
+    display: block;
+}
+
+/* Modal Action Buttons */
+.form-actions {
+    margin-top: 25px;
+    text-align: right;
+}
+.form-actions button { /* Áp dụng cho cả nút Lưu và nút Hủy trong modal xóa */
+    margin-left: 10px;
+    padding: 10px 25px;
+    font-size: 0.95em;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+/* Nút Hủy trong modal XÓA */
+#delete-confirm-modal-service .form-actions .btn-secondary.close-button {
+     background-color: #6c757d;
+     border-color: #6c757d;
+     color: white;
+}
+#delete-confirm-modal-service .form-actions .btn-secondary.close-button:hover {
+     background-color: #5a6268;
+     border-color: #5a6268;
+}
+
+/* Nút Lưu trong modal THÊM/SỬA */
+#service-modal .form-actions .btn-primary {
+     background-color: #0d6efd;
+     border-color: #0d6efd;
+     color: white;
+}
+#service-modal .form-actions .btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* Nút Xác nhận xóa trong modal XÓA */
+#delete-confirm-modal-service .form-actions .btn-danger {
+     /* Kế thừa style .btn-danger chung */
+}
+
+
+/* Error message style */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 15px;
+    text-align: left;
+    min-height: 1.2em;
+}
+/* =============================================== */

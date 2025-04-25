@@ -134,7 +134,8 @@ if (signInForm) {
     // --- Check for Admin first ---
     if (email === 'admin6868@gmail.com' && password === '68686868') {
         isLoggedIn = true;
-        redirectUrl = '../dashboard/dashboard.html'; // Admin redirects to dashboard
+        // ***** THAY ĐỔI Ở ĐÂY: Chuyển admin về trang home *****
+        redirectUrl = '../home/home.html'; // Admin redirects to home
         loggedInUser = { email: email, role: 'admin', name: 'Admin' }; // Create admin user object
     } else {
         // --- Check for regular users in localStorage ---
@@ -153,7 +154,8 @@ if (signInForm) {
         signInError.style.color = "green";
         signInError.textContent = "Đăng nhập thành công! Đang chuyển hướng...";
 
-        // Save user info (including role) to localStorage
+        // Save user info (including role) to localStorage with key 'currentUser'
+        // ** QUAN TRỌNG: Key là 'currentUser' như bạn đã dùng **
         localStorage.setItem("currentUser", JSON.stringify(loggedInUser));
 
         setTimeout(() => {

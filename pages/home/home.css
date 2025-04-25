@@ -261,3 +261,45 @@ h1, h2, h3, h4 {
     margin: 0;
     color: #6c757d; /* Medium grey text */
 }
+/* Ẩn các phần tử thông tin user và quản lý mặc định */
+/* Quan trọng: đảm bảo các ID này là duy nhất hoặc dùng class nếu cần */
+#user-info,
+#manage-link {
+    display: none; /* JS sẽ thay đổi thuộc tính này */
+}
+
+/* Style cho nút Đăng xuất trong header của home */
+#logout-button {
+    margin-left: 15px;
+    background-color: #dc3545; /* Màu đỏ */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em; /* Cân nhắc đồng bộ với font size nav link */
+    vertical-align: middle; /* Giúp căn chỉnh với text bên cạnh */
+    font-family: inherit; /* Thừa kế font từ thẻ cha */
+}
+
+#logout-button:hover {
+    background-color: #c82333; /* Màu đỏ đậm hơn khi hover */
+}
+
+/* CSS cho nút nói chung (Nếu chưa có trong base.css) */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+    border: none;
+}
+.btn-primary { background-color: #0d6efd; color: #fff; }
+.btn-primary:hover { background-color: #0b5ed7; }
+.btn-secondary { background-color: #6c757d; color: #fff; font-size: 0.9em; padding: 8px 20px; }
+.btn-secondary:hover { background-color: #5a6268; }
+
+/* ============================================================ */

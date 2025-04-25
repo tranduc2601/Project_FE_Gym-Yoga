@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Management - Trang chủ</title>
-    <link rel="stylesheet" href="home.css">
-    </head>
+    <link rel="stylesheet" href="../../common/css/base.css"> <link rel="stylesheet" href="home.css">
+</head>
 <body>
 
     <header class="main-header">
@@ -16,8 +16,10 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Lịch tập</a></li>
-                    <li><a href="../login/login.html">Đăng nhập</a></li>
+                    <li><a href="../schedule/schedule.html">Lịch tập</a></li> <li id="user-info"> <span>Chào, <strong id="username"></strong>!</span>
+                        <a href="../dashboard/dashboard.html" id="manage-link">Quản lý</a> <button id="logout-button">Đăng xuất</button> </li>
+
+                    <li><a href="../login/login.html" id="login-link">Đăng nhập</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,8 +31,7 @@
                 <div class="container hero-text">
                     <h1>Welcome to Our Gym</h1>
                     <p>Transform Your Body, Transform Your Life</p>
-                    <a href="#" class="btn btn-primary">Bắt đầu ngay</a>
-                </div>
+                    <a href="../schedule/schedule.html" class="btn btn-primary">Bắt đầu ngay</a> </div>
             </div>
         </section>
 
@@ -39,29 +40,20 @@
                 <h2>Các lớp học phổ biến</h2>
                 <div class="classes-grid">
                     <article class="class-card">
-                        <div class="class-image" id="gym-image">
-                            
-                        </div>
+                        <div class="class-image" id="gym-image"></div>
                         <h3>Gym</h3>
                         <p>Tập luyện với các thiết bị hiện đại</p>
-                        <a href="#" class="btn btn-secondary">Đặt lịch</a>
-                    </article>
+                         <a href="../schedule/schedule.html" class="btn btn-secondary">Đặt lịch</a> </article>
                     <article class="class-card">
-                         <div class="class-image" id="yoga-image">
-                         
-                         </div>
+                         <div class="class-image" id="yoga-image"></div>
                         <h3>Yoga</h3>
                         <p>Thư giãn và cân bằng tâm trí</p>
-                         <a href="#" class="btn btn-secondary">Đặt lịch</a>
-                    </article>
+                         <a href="../schedule/schedule.html" class="btn btn-secondary">Đặt lịch</a> </article>
                     <article class="class-card">
-                         <div class="class-image" id="zumba-image">
-                            
-                         </div>
+                         <div class="class-image" id="zumba-image"></div>
                         <h3>Zumba</h3>
                         <p>Đốt cháy calories với những điệu nhảy sôi động</p>
-                         <a href="#" class="btn btn-secondary">Đặt lịch</a>
-                    </article>
+                         <a href="../schedule/schedule.html" class="btn btn-secondary">Đặt lịch</a> </article>
                 </div>
             </div>
         </section>
@@ -69,31 +61,14 @@
 
     <footer class="main-footer">
         <div class="container footer-grid">
-            <div class="footer-column">
-                <h4>Về chúng tôi</h4>
-                <p>Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Liên hệ</h4>
-                <p>Email: contact@gym.com<br>
-                   Phone: (123) 456-7890<br>
-                   Địa chỉ: 123 Đường ABC, Quận XYZ</p>
-            </div>
-            <div class="footer-column">
-                <h4>Theo dõi chúng tôi</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/rikkeisofthochiminh?locale=vi_VN">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
+            <div class="footer-column"><h4>Về chúng tôi</h4><p>Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.</p></div>
+            <div class="footer-column"><h4>Liên hệ</h4><p>Email: contact@gym.com<br> Phone: (123) 456-7890<br> Địa chỉ: 123 Đường ABC, Quận XYZ</p></div>
+            <div class="footer-column"><h4>Theo dõi</h4><div class="social-links"> <a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">Twitter</a></div></div>
         </div>
-        <div class="copyright-bar">
-            <div class="container">
-                <p>&copy; 2024 Gym Management. All rights reserved.</p>
-            </div>
-        </div>
+        <div class="copyright-bar"><div class="container"><p>&copy; 2024 Gym Management. All rights reserved.</p></div></div>
     </footer>
+
+    <script src="home.js" defer></script>
 
 </body>
 </html>
