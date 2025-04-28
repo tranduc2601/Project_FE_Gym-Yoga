@@ -1,8 +1,8 @@
-/* --- Base Styles (Giả sử đã có hoặc import từ common/css/base.css) --- */
+/* --- Base Styles --- */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f8f9fa; /* Màu nền chung */
+    background-color: #f8f9fa;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
@@ -28,7 +28,7 @@ ul {
 
 /* --- Header Styles --- */
 .main-header {
-    background-color: #1F2937; /* Nền tối */
+    background-color: #1F2937;
     color: #f8f9fa;
     padding: 15px 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -93,7 +93,7 @@ main.container {
     font-size: 1.8em;
 }
 
-/* Style cho nút chung */
+/* --- General Button Styles --- */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -111,11 +111,15 @@ main.container {
 .btn-secondary:hover { background-color: #5a6268;}
 .btn-danger { background-color: #dc3545; color: white;}
 .btn-danger:hover { background-color: #c82333;}
-.btn-edit { background-color: #ffc107; color: #333; padding: 5px 8px; font-size: 0.85em; margin-right: 5px;border-radius: 5px;}
-.btn-delete { background-color: #dc3545; color: white; padding: 5px 8px; font-size: 0.85em; margin-right: 5px;border-radius: 5px;}
+.btn-edit { background-color: #ffc107; color: #333; padding: 5px 8px; font-size: 0.85em; margin-right: 5px; border-radius: 4px; } /* Giảm radius */
+.btn-delete { background-color: #dc3545; color: white; padding: 5px 8px; font-size: 0.85em; border-radius: 4px; } /* Giảm radius */
 .btn-edit:hover { background-color: #e0a800; }
 .btn-delete:hover { background-color: #c82333; }
-
+/* Style nút bị vô hiệu hóa */
+button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed !important; /* Quan trọng để ghi đè cursor pointer mặc định */
+}
 
 /* --- Table Styles --- */
 .table-container {
@@ -141,7 +145,7 @@ table th, table td {
 }
 
 table th {
-  background-color: #f1f3f5; /* Nền xám rất nhạt cho header */
+  background-color: #f1f3f5;
   font-weight: 600;
   color: #495057;
   font-size: 0.85em;
@@ -154,13 +158,27 @@ table tbody tr:hover {
   background-color: #f8f9fa;
 }
 
-/* --- Style cho placeholder table (ĐÃ THÊM) --- */
-#schedule-list-body td[colspan="6"] {
+/* Style cho placeholder table */
+#schedule-list-body td[colspan="7"] { /* Cập nhật colspan */
     text-align: center;
     padding: 20px;
     color: #6c757d;
     font-style: italic;
 }
+
+/* --- Status Badge Styles --- */
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    display: inline-block;
+}
+.status-pending { background-color: #ffc107; color: #333; }
+.status-approved { background-color: #28a745; }
+.status-cancelled { background-color: #dc3545; }
 
 /* --- Pagination Styles --- */
 .pagination-container {
@@ -183,24 +201,27 @@ table tbody tr:hover {
 .pagination li span {
     display: block;
     padding: 8px 15px;
-    color: #f8f9fa;
+    color: #0d6efd; /* Màu chữ xanh */
     text-decoration: none;
-    background-color: #0d6efd;
-    border: 1px solid #0d6efd;
+    background-color: #fff; /* Nền trắng */
+    border: 1px solid #dee2e6; /* Viền xám nhạt */
     border-radius: 5px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     font-weight: 500;
+    font-size: 0.9em;
 }
 
 .pagination li a:hover {
-    background-color: #0b5ed7;
-    border-color: #0b5ed7;
+    background-color: #e9ecef; /* Hover xám nhạt */
+    border-color: #adb5bd;
+    color: #0a58ca;
 }
 
 .pagination li.active span,
 .pagination li.active a {
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+    background-color: #0d6efd; /* Nền xanh dương */
+    border-color: #0d6efd;
+    color: #fff; /* Chữ trắng */
     cursor: default;
 }
 
@@ -212,41 +233,79 @@ table tbody tr:hover {
     border-color: #dee2e6;
 }
 
-
 /* --- Modal Styles --- */
 .modal {
-    display: none; position: fixed; z-index: 1000;
+    display: none; position: fixed; z-index: 1050; /* Cao hơn các element khác */
     left: 0; top: 0; width: 100%; height: 100%;
-    overflow: auto; background-color: rgba(0,0,0,0.5);
-    padding-top: 60px;
+    overflow: auto; background-color: rgba(0,0,0,0.6); /* Semi-transparent background */
+    padding-top: 60px; /* Space from top */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 .modal-content {
-    background-color: #fefefe; margin: 5% auto; padding: 25px 30px;
-    border: 1px solid #ddd; border-radius: 8px; width: 80%;
-    max-width: 500px; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #fefefe; margin: auto; padding: 25px 30px;
+    border: none; border-radius: 8px; width: 90%;
+    max-width: 500px; /* Max width for general modals */
+    position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: fadeInModal 0.3s ease-out;
+    text-align: left; /* Default align */
 }
-.modal-content.small { max-width: 400px; }
-.close-button {
+
+/* Keyframes for modal animation */
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Style cho modal nhỏ và căn giữa (dùng cho delete confirm) */
+.modal-content.small.delete-confirm {
+    max-width: 360px; /* Smaller max-width */
+    text-align: center; /* Center align text */
+    padding: 30px 25px 25px 25px; /* Adjust padding */
+}
+
+.modal-content .close-button {
     color: #aaa; position: absolute; top: 10px; right: 15px;
-    font-size: 28px; font-weight: bold; cursor: pointer;
+    font-size: 24px; font-weight: bold; cursor: pointer;
+    line-height: 1; background: none; border: none; padding: 0;
 }
-.close-button:hover, .close-button:focus { color: black; text-decoration: none; }
-.modal h2 { margin-top: 0; margin-bottom: 20px; color: #333; }
+.modal-content .close-button:hover, .modal-content .close-button:focus {
+    color: #333; text-decoration: none;
+}
+
+.modal h2 { margin-top: 0; margin-bottom: 20px; color: #333; font-size: 1.5em; }
+/* Căn giữa tiêu đề và p trong modal delete-confirm */
+.modal-content.delete-confirm h2 { font-size: 1.4em; margin-bottom: 15px; }
+.modal-content.delete-confirm p { margin-bottom: 25px; font-size: 0.95em; color: #555; line-height: 1.6; }
+
+/* Form Styles within Modal */
 .form-group { margin-bottom: 15px; }
-.form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: #555; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: #555; font-size: 0.9em;}
 .form-group input[type="text"], .form-group input[type="email"],
 .form-group input[type="date"], .form-group select {
     width: 100%; padding: 10px; border: 1px solid #ccc;
-    border-radius: 4px; box-sizing: border-box; font-size: 1em;
+    border-radius: 4px; box-sizing: border-box; font-size: 1em; font-family: inherit;
 }
-.form-actions { margin-top: 20px; text-align: right; }
-.form-actions button { margin-left: 10px; }
-.error-message { color: red; font-size: 0.9em; margin-top: 10px; min-height: 1.2em; }
+.form-group input:focus, .form-group select:focus {
+    border-color: #86b7fe; outline: 0; box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+.form-actions {
+    margin-top: 20px; display: flex; justify-content: flex-end; /* Align buttons right by default */ gap: 10px;
+}
+/* Căn giữa nút trong modal delete-confirm */
+.modal-content.delete-confirm .form-actions {
+    justify-content: center; margin-top: 0; padding-top: 0;
+}
+.modal-content.delete-confirm .btn { /* Style nút trong modal delete */
+     padding: 10px 25px;
+     font-size: 0.95em;
+}
+
+.error-message { color: #dc3545; font-size: 0.9em; margin-top: 10px; min-height: 1.2em; text-align: left; }
 
 /* --- Footer Styles --- */
-.main-footer {
-    background-color: #1F2937; color: #adb5bd; padding-top: 40px;
-}
+.main-footer { background-color: #1F2937; color: #adb5bd; padding-top: 40px; }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px; }
 .footer-column h4 { color: #fff; margin-bottom: 15px; font-size: 1.1em; }
 .footer-column p { font-size: 0.9em; line-height: 1.7; }

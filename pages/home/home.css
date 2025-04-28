@@ -303,3 +303,104 @@ h1, h2, h3, h4 {
 .btn-secondary:hover { background-color: #5a6268; }
 
 /* ============================================================ */
+/* --- Pagination Styles for Home Page --- */
+.home-pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Khoảng cách với phần lớp học */
+    padding-bottom: 20px;
+}
+
+.home-pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 5px; /* Khoảng cách giữa các nút */
+}
+
+.home-pagination li a,
+.home-pagination li span {
+    display: block;
+    padding: 8px 14px; /* Kích thước nút */
+    min-width: 40px; /* Chiều rộng tối thiểu */
+    text-align: center;
+    border: 1px solid #dee2e6; /* Viền xám nhạt */
+    border-radius: 4px;
+    color: #007bff; /* Màu chữ xanh */
+    background-color: #fff; /* Nền trắng */
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.home-pagination li a:hover {
+    background-color: #e9ecef; /* Nền xám nhạt khi hover */
+    border-color: #adb5bd;
+}
+
+.home-pagination li.active span {
+    background-color: #007bff; /* Nền xanh cho trang hiện tại */
+    color: #fff; /* Chữ trắng */
+    border-color: #007bff;
+    cursor: default;
+}
+
+.home-pagination li.disabled span,
+.home-pagination li.disabled a { /* Kiểu cho nút Previous/Next bị vô hiệu hóa */
+    color: #6c757d; /* Màu xám */
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+    pointer-events: none; /* Ngăn chặn click */
+}
+/* --- End Pagination Styles --- */
+/* --- Modal Styles (Copy to home.css if not already present) --- */
+.modal { display: none; position: fixed; z-index: 1050; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); padding-top: 60px; justify-content: center; align-items: center; }
+.modal-content { background-color: #fefefe; margin: auto; padding: 25px 30px; border: 1px solid #ddd; border-radius: 8px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+.modal-content.small { max-width: 400px; }
+.close-button { color: #aaa; position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.close-button:hover, .close-button:focus { color: black; text-decoration: none; }
+.modal h2 { margin-top: 0; margin-bottom: 20px; color: #333; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: #555; }
+.form-group input[type="text"], .form-group input[type="email"],
+.form-group input[type="date"], .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1em; }
+.form-actions { margin-top: 20px; text-align: right; }
+.form-actions button { margin-left: 10px; }
+.error-message { color: red; font-size: 0.9em; margin-top: 10px; min-height: 1.2em; }
+/* --- End Modal Styles --- */
+/* === Các Style mới được chuyển từ HTML sang === */
+
+/* CSS modal chung (Copy từ style inline trước đó nếu chưa có) */
+.modal { display: none; position: fixed; z-index: 1050; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); padding-top: 60px; justify-content: center; align-items: center; }
+.modal-content { background-color: #fefefe; margin: auto; padding: 25px 30px; border: 1px solid #ddd; border-radius: 8px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.2); animation: fadeInModal 0.3s ease-out; }
+.modal-content.small { max-width: 400px; text-align: center; }
+.close-button { color: #aaa; position: absolute; top: 10px; right: 15px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.close-button:hover, .close-button:focus { color: black; text-decoration: none; }
+.modal h2 { margin-top: 0; margin-bottom: 20px; color: #333; font-size: 1.5em; }
+.modal p { margin-bottom: 20px; color: #555; line-height: 1.6;} /* Thêm line-height cho dễ đọc */
+.form-group { margin-bottom: 15px; text-align: left; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 500; color: #555; }
+.form-group input[type="text"], .form-group input[type="email"],
+.form-group input[type="date"], .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1em; }
+.form-actions { margin-top: 20px; text-align: right; display: flex; justify-content: flex-end; gap: 10px; }
+.form-actions[style*="center"] { justify-content: center; }
+.error-message { color: red; font-size: 0.9em; margin-top: 10px; min-height: 1.2em; text-align: left;}
+@keyframes fadeInModal { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+
+/* CSS cho Phân trang (Copy từ style inline trước đó nếu chưa có) */
+.home-pagination-container { display: flex; justify-content: center; align-items: center; margin-top: 30px; padding-bottom: 20px; }
+.home-pagination { list-style: none; padding: 0; margin: 0; display: flex; gap: 5px; }
+.home-pagination li a, .home-pagination li span { display: block; padding: 8px 14px; min-width: 40px; text-align: center; border: 1px solid #dee2e6; border-radius: 4px; color: #007bff; background-color: #fff; text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; cursor: pointer; font-size: 0.9em; }
+.home-pagination li a:hover { background-color: #e9ecef; border-color: #adb5bd; }
+.home-pagination li.active span { background-color: #007bff; color: #fff; border-color: #007bff; cursor: default; }
+.home-pagination li.disabled span, .home-pagination li.disabled a { color: #6c757d; background-color: #f8f9fa; border-color: #dee2e6; cursor: not-allowed; pointer-events: none; }
+
+/* Optional: Style nút bị vô hiệu hóa nếu cần */
+button[disabled] { opacity: 0.6; cursor: not-allowed !important; }
+
+/* === Kết thúc CSS mới === */

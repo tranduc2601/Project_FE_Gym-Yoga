@@ -10,7 +10,7 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit; /* Kế thừa màu chữ từ thẻ cha */
+  color: inherit;
 }
 
 ul {
@@ -18,6 +18,27 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+/* --- General Button Styles (Thêm vào nếu chưa có) --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95em;
+    border: none;
+}
+.btn-primary { background-color: #0d6efd; color: white;}
+.btn-primary:hover { background-color: #0b5ed7;}
+.btn-secondary { background-color: #6c757d; color: white;}
+.btn-secondary:hover { background-color: #5a6268;}
+.btn-danger { background-color: #dc3545; color: white;}
+.btn-danger:hover { background-color: #c82333;}
+.btn-info { background-color: #0dcaf0; color: #000;} /* Ví dụ nút info */
+.btn-info:hover { background-color: #31d2f2; }
 
 /* --- Layout --- */
 .dashboard-container {
@@ -27,75 +48,60 @@ ul {
 
 /* --- Sidebar Styles --- */
 .sidebar {
-  width: 230px; /* Giữ nguyên hoặc điều chỉnh */
-  background-color: #212529; /* Nền tối */
-  color: #adb5bd; /* Màu chữ mặc định trong sidebar */
+  width: 230px;
+  background-color: #212529;
+  color: #adb5bd;
   padding: 20px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
 
-/* --- Sidebar Title Styling --- */
 .sidebar h3 {
   color: #ffffff;
   margin-bottom: 35px;
-  font-size: 1.5em; /* Điều chỉnh lại nếu cần */
-  font-weight: 600; /* Giảm độ đậm so với ảnh trước */
+  font-size: 1.5em;
+  font-weight: 600;
   text-align: left;
   padding-left: 10px;
 }
 
-/* --- Sidebar Navigation List Items --- */
 .sidebar nav ul li {
-  margin-bottom: 5px; /* Giảm khoảng cách giữa các mục */
-}
-.sidebar nav ul li a.logout {
-  color: #e57373;
+  margin-bottom: 5px;
 }
 
-.sidebar nav ul li a.active {
-  background-color: #4B5563;
-  color: #ffffff;
-  font-weight: 500;
-}
-/* --- General Link Styling within Nav (Updated) --- */
 .sidebar nav ul li a {
   display: block;
-  padding: 8px 15px; /* Giảm padding */
-  border-radius: 4px; /* Giảm bo góc nhẹ */
+  padding: 8px 15px;
+  border-radius: 4px;
   font-size: 0.95em;
   transition: background-color 0.2s ease, color 0.2s ease;
-  color: #e9ecef; /* --- Màu chữ trắng hơi xám --- */
-  background-color: transparent; /* --- Đảm bảo nền trong suốt mặc định --- */
+  color: #e9ecef;
+  background-color: transparent;
 }
 
-/* --- Styling for HOVER Links --- */
 .sidebar nav ul li a:hover {
-  background-color: #343a40; /* Nền tối hơn chút khi hover */
-  color: #ffffff; /* Chữ trắng sáng khi hover */
+  background-color: #343a40;
+  color: #ffffff;
 }
 
-/* --- Styling for ACTIVE Link (Updated) --- */
 .sidebar nav ul li a.active {
-  background-color: transparent; /* --- Không có nền cho active --- */
-  color: #ffffff; /* --- Chữ trắng sáng hơn cho active --- */
-  font-weight: 600; /* --- Làm chữ đậm hơn để phân biệt --- */
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 600;
 }
 
-/* --- Styling for Logout Link (Updated) --- */
 .sidebar nav ul li a.logout {
-  /* Không cần style đặc biệt nữa, sẽ thừa kế màu từ rule chung ở trên */
-  /* Có thể bỏ hẳn rule này nếu không cần gì thêm */
+    /* Style mặc định hoặc thừa kế */
+     color: #e57373; /* Màu đỏ nhạt cho logout */
 }
 
 .sidebar nav ul li a.logout:hover {
-   /* Thừa kế hiệu ứng hover chung */
    background-color: #343a40;
-   color: #ffffff;
+   color: #ff4d4f; /* Màu đỏ đậm hơn khi hover logout */
 }
 
-/* --- Main Content Styles (Existing - Giữ nguyên) --- */
+/* --- Main Content Styles --- */
 .main-content {
   flex-grow: 1;
   padding: 25px 35px;
@@ -111,17 +117,17 @@ ul {
   font-weight: 600;
 }
 
-/* --- Stats Section (Existing - Giữ nguyên) --- */
+/* --- Stats Section --- */
 .stats-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive hơn */
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Giảm minwidth để vừa 3 cột */
+  gap: 20px; /* Giảm gap */
   margin-bottom: 35px;
 }
 
 .stat-box {
   background-color: #ffffff;
-  padding: 20px; /* Điều chỉnh padding nếu cần */
+  padding: 15px; /* Giảm padding */
   border-radius: 8px;
   border: 1px solid #dee2e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -129,18 +135,18 @@ ul {
 
 .stat-box p {
   margin: 0 0 8px 0;
-  font-size: 0.9em;
+  font-size: 0.85em; /* Giảm size chữ */
   color: #6c757d;
 }
 
 .stat-box span {
-  font-size: 2em; /* Điều chỉnh size số liệu nếu cần */
+  font-size: 1.8em; /* Giảm size số */
   font-weight: 600;
   color: #343a40;
   display: block;
 }
 
-/* --- Chart Section (Existing - Giữ nguyên) --- */
+/* --- Chart Section --- */
 .chart-container {
   background-color: #ffffff;
   padding: 20px;
@@ -148,21 +154,31 @@ ul {
   border: 1px solid #dee2e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 35px;
-  min-height: 300px; /* Điều chỉnh chiều cao tối thiểu */
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Để định vị thông báo */
 }
 
 #chart {
   max-width: 100%;
-  max-height: 300px; /* Giới hạn chiều cao */
+  max-height: 300px;
 }
 
-/* --- Filter Section (Existing - Giữ nguyên) --- */
+/* Style cho thông báo không có dữ liệu biểu đồ */
+.no-chart-data-message {
+     text-align: center;
+     padding: 20px;
+     color: #6c757d;
+     font-style: italic;
+     width: 100%; /* Chiếm toàn bộ container */
+}
+
+/* --- Filter Section --- */
 .filter-container {
   background-color: #ffffff;
-  padding: 15px 25px; /* Điều chỉnh padding */
+  padding: 15px 25px;
   border-radius: 8px;
   border: 1px solid #dee2e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -171,16 +187,16 @@ ul {
 
 .filter-container h3 {
   margin-top: 0;
-  margin-bottom: 15px; /* Điều chỉnh margin */
-  font-size: 1.2em; /* Điều chỉnh size */
+  margin-bottom: 15px;
+  font-size: 1.2em;
   font-weight: 600;
   color: #343a40;
 }
 
 .filter-controls {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Điều chỉnh minmax */
-  gap: 15px; /* Điều chỉnh gap */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
   align-items: flex-end;
 }
 
@@ -196,14 +212,14 @@ ul {
 .filter-controls input[type="text"],
 .filter-controls input[type="date"] {
   width: 100%;
-  padding: 8px 10px; /* Điều chỉnh padding */
+  padding: 8px 10px;
   border: 1px solid #ced4da;
   border-radius: 6px;
-  font-size: 0.9em; /* Điều chỉnh size */
+  font-size: 0.9em;
   box-sizing: border-box;
 }
 
-/* --- Table Section (Existing - Giữ nguyên) --- */
+/* --- Table Section --- */
 .table-container {
    background-color: #ffffff;
    border: 1px solid #dee2e6;
@@ -219,7 +235,7 @@ table {
 }
 
 table th, table td {
-  padding: 12px 15px; /* Điều chỉnh padding */
+  padding: 12px 15px;
   text-align: left;
   border-bottom: 1px solid #e9ecef;
   vertical-align: middle;
@@ -238,21 +254,175 @@ table tbody tr:hover {
   background-color: #f1f3f5;
 }
 
-table td button {
-  padding: 5px 10px; /* Điều chỉnh padding */
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.85em; /* Điều chỉnh size */
-  transition: background-color 0.2s ease;
+/* Style cho các huy hiệu trạng thái */
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    display: inline-block;
+}
+.status-pending { background-color: #ffc107; color: #333; }
+.status-approved { background-color: #28a745; }
+.status-cancelled { background-color: #dc3545; }
+
+/* Style cho các nút thao tác trong bảng */
+.action-buttons button {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.action-buttons button:last-child {
+    margin-right: 0;
+}
+.action-buttons span { /* Căn giữa text trạng thái */
+    vertical-align: middle;
+    display: inline-block; /* Cần thiết để vertical-align hoạt động tốt với span */
+    margin-right: 8px; /* Thêm khoảng cách nếu cần */
 }
 
-table td button:hover {
-  background-color: #c82333;
-}
+/* Style nút Duyệt/Hủy/Xóa */
+.btn-approve { background-color: #28a745; color: white; border: none; padding: 5px 8px; font-size: 0.85em; border-radius: 4px; cursor: pointer; }
+.btn-cancel { background-color: #ffc107; color: #333; border: none; padding: 5px 8px; font-size: 0.85em; border-radius: 4px; cursor: pointer;}
+.btn-delete-permanent { background-color: #dc3545; color: white; border: none; padding: 5px 8px; font-size: 0.85em; border-radius: 4px; cursor: pointer; margin-left: 8px; vertical-align: middle; }
+
+.btn-approve:hover { background-color: #218838; }
+.btn-cancel:hover { background-color: #e0a800; }
+.btn-delete-permanent:hover { background-color: #c82333; }
+
 
 table tr:last-child td {
  border-bottom: none;
 }
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1050; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    /* Flexbox for centering */
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px; /* Add some padding top */
+    padding-bottom: 30px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Center vertically and horizontally */
+    padding: 25px 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 90%; /* Default width */
+    max-width: 500px; /* Maximum width */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: fadeInModal 0.3s ease-out; /* Optional fade in */
+}
+
+/* Smaller modal variant */
+.modal-content.small {
+    max-width: 400px;
+    text-align: center; /* Center text in small modals */
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; /* Prevent extra space */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em; /* Adjust size */
+}
+
+.modal p { /* Style for paragraphs in modals */
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+    text-align: left; /* Default align left for forms */
+}
+.modal-content.small p { /* Center paragraph in small modals */
+     text-align: center;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Ensure labels/inputs align left */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea /* Add textarea if used */ {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: inherit;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25); /* Bootstrap focus style */
+}
+
+
+.form-actions {
+    margin-top: 25px;
+    text-align: right; /* Default align right */
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Space between buttons */
+}
+.form-actions[style*="center"] { /* If inline style is used for centering */
+    justify-content: center;
+}
+
+
+.error-message {
+    color: #dc3545; /* Bootstrap danger color */
+    font-size: 0.9em;
+    margin-top: 10px;
+    min-height: 1.2em; /* Prevent layout shift */
+    text-align: left; /* Ensure errors align left */
+}
+/* === Kết thúc CSS === */
