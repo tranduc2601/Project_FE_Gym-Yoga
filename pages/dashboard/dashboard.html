@@ -5,65 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard - Quản lý lịch</title>
    <link rel="stylesheet" href="dashboard.css" />
-   </head>
+</head>
 <body>
   <div class="dashboard-container">
     <aside class="sidebar">
-      <h3>Admin Dashboard</h3> <nav> <ul> <li><a href="dashboard.html" class="active">Quản lý lịch</a></li> <li><a href="../services/services.html">Quản lý dịch vụ</a></li> <li><a href="../schedule/schedule.html" target="_blank">Xem Lịch (User)</a></li> <li><a href="../home/home.html">Trang chủ</a></li> <li><a class="logout" href="../login/login.html">Đăng xuất</a></li> </ul> </nav>
+       <h3>Admin Dashboard</h3> <nav> <ul> <li><a href="dashboard.html" class="active">Quản lý lịch</a></li> <li><a href="../services/services.html">Quản lý dịch vụ</a></li> <li><a href="../schedule/schedule.html" target="_blank">Xem Lịch</a></li> <li><a href="../home/home.html">Trang chủ</a></li> <li><a class="logout" href="../login/login.html">Đăng xuất</a></li> </ul> </nav>
     </aside>
     <main class="main-content">
        <h2 class="main-title">Thống kê và Quản lý Lịch Tập</h2>
-        <div style="margin-bottom: 20px;">
-            <button id="btn-admin-book" class="btn btn-info">Đặt lịch cho User</button>
-        </div>
-       <section class="stats-container">
-          <div class="stat-box"> <p>Tổng số lịch Gym</p> <span id="gymCount">0</span> </div> <div class="stat-box"> <p>Tổng số lịch Yoga</p> <span id="yogaCount">0</span> </div> <div class="stat-box"> <p>Tổng số lịch Zumba</p> <span id="zumbaCount">0</span> </div> <div class="stat-box"> <p>Lịch chờ duyệt</p> <span id="pendingCount">0</span> </div> <div class="stat-box"> <p>Lịch đã duyệt</p> <span id="approvedCount">0</span> </div> <div class="stat-box"> <p>Lịch đã hủy</p> <span id="cancelledCount">0</span> </div>
-       </section>
-       <section class="chart-container">
-         <canvas id="chart"></canvas>
-         </section>
-       <section class="filter-container">
-          <h3>Bộ lọc Lịch Tập</h3> <div class="filter-controls"> <div class="filter-item"> <label for="classTypeFilter">Lớp học</label> <select id="classTypeFilter"> <option value="">Tất cả</option> <option value="Gym">Gym</option> <option value="Yoga">Yoga</option> <option value="Zumba">Zumba</option> </select> </div> <div class="filter-item"> <label for="emailSearch">Email</label> <input type="text" id="emailSearch" placeholder="Tìm theo email"> </div> <div class="filter-item"> <label for="dateFilter">Ngày</label> <input type="date" id="dateFilter"> </div> <div class="filter-item"> <label for="statusFilter">Trạng thái</label> <select id="statusFilter"> <option value="">Tất cả</option> <option value="pending">Chờ duyệt</option> <option value="approved">Đã duyệt</option> <option value="cancelled">Đã hủy</option> </select> </div> </div>
-       </section>
-
+        <div style="margin-bottom: 20px;"> <button id="btn-admin-book" class="btn btn-info">Đặt lịch cho Khách Hàng</button> </div>
+       <section class="stats-container"> <div class="stat-box"> <p>Tổng số lịch Gym</p> <span id="gymCount">0</span> </div> <div class="stat-box"> <p>Tổng số lịch Yoga</p> <span id="yogaCount">0</span> </div> <div class="stat-box"> <p>Tổng số lịch Zumba</p> <span id="zumbaCount">0</span> </div> <div class="stat-box"> <p>Lịch chờ duyệt</p> <span id="pendingCount">0</span> </div> <div class="stat-box"> <p>Lịch đã duyệt</p> <span id="approvedCount">0</span> </div> <div class="stat-box"> <p>Lịch đã hủy</p> <span id="cancelledCount">0</span> </div> </section>
+       <section class="chart-container"> <canvas id="chart"></canvas> </section>
+       <section class="filter-container"> <h3>Bộ lọc Lịch Tập</h3> <div class="filter-controls"> <div class="filter-item"> <label for="classTypeFilter">Lớp học</label> <select id="classTypeFilter"> <option value="">Tất cả</option> <option value="Gym">Gym</option> <option value="Yoga">Yoga</option> <option value="Zumba">Zumba</option> </select> </div> <div class="filter-item"> <label for="emailSearch">Email</label> <input type="text" id="emailSearch" placeholder="Tìm theo email"> </div> <div class="filter-item"> <label for="dateFilter">Ngày</label> <input type="date" id="dateFilter"> </div> <div class="filter-item"> <label for="statusFilter">Trạng thái</label> <select id="statusFilter"> <option value="">Tất cả</option> <option value="pending">Chờ duyệt</option> <option value="approved">Đã duyệt</option> <option value="cancelled">Đã hủy</option> </select> </div> </div> </section>
        <section class="table-container">
           <table>
-            <thead>
-              <tr>
-                <th>Lớp học</th>
-                <th>Ngày tập</th>
-                <th>Khung giờ</th>
-                <th>Họ tên</th>
-                <th>Email</th>
-                <th>Trạng thái</th>
-                <th>Thao tác</th>
-                <th>Xóa</th>
-              </tr>
-            </thead>
-            <tbody id="scheduleTable">
-                 </tbody>
+            <thead> <tr> <th>Lớp học</th> <th>Ngày tập</th> <th>Khung giờ</th> <th>Họ tên</th> <th>Email</th> <th>Trạng thái</th> <th>Thao tác</th> <th>Xóa</th> </tr> </thead>
+            <tbody id="scheduleTable"> </tbody>
           </table>
        </section>
+       <nav class="pagination-container" aria-label="Schedule table pagination"> <ul class="pagination" id="dashboard-pagination-controls"> </ul> </nav>
     </main>
   </div>
-
   <div id="admin-schedule-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button admin-modal-close">×</span>
-            <h2 id="admin-modal-title">Đặt Lịch Cho User</h2>
+            <span class="close-button admin-modal-close">×</span> <h2 id="admin-modal-title">Đặt Lịch Cho Khách Hàng</h2>
             <form id="admin-schedule-form">
                  <div class="form-group"> <label for="admin-class-type">Chọn lớp học:</label> <select id="admin-class-type" required> <option value="">-- Đang tải dịch vụ... --</option> </select> </div>
                  <div class="form-group"> <label for="admin-schedule-date">Chọn ngày tập:</label> <input type="date" id="admin-schedule-date" required> </div>
                  <div class="form-group"> <label for="admin-schedule-time">Chọn khung giờ:</label> <select id="admin-schedule-time" required> <option value="">-- Chọn giờ --</option> <option value="06:00 - 07:00">06:00 - 07:00</option> <option value="07:00 - 08:00">07:00 - 08:00</option> <option value="08:00 - 09:00">08:00 - 09:00</option> <option value="17:00 - 18:00">17:00 - 18:00</option> <option value="18:00 - 19:00">18:00 - 19:00</option> <option value="19:00 - 20:00">19:00 - 20:00</option> </select> </div>
-                 <div class="form-group"> <label for="admin-full-name">Họ tên User:</label> <input type="text" id="admin-full-name" placeholder="Nhập họ tên user" required> </div>
-                 <div class="form-group"> <label for="admin-email">Email User:</label> <input type="email" id="admin-email" placeholder="Nhập email user" required> </div>
-                 <div class="form-actions"> <button type="submit" class="btn btn-primary">Lưu Lịch (Duyệt)</button> <button type="button" class="btn btn-secondary admin-modal-close">Hủy</button> </div>
+                 <div class="form-group"> <label for="admin-full-name">Họ tên khách hàng:</label> <input type="text" id="admin-full-name" placeholder="Nhập họ tên người dùng" required> </div>
+                 <div class="form-group"> <label for="admin-email">Email khách hàng:</label> <input type="email" id="admin-email" placeholder="Nhập email user" required> </div>
+                 <div class="form-actions"> <button type="submit" class="btn btn-primary">Lưu Lịch (Duyệt)</button> </div>
                  <p id="admin-modal-error" class="error-message"></p>
             </form>
         </div>
     </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="dashboard.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <script src="dashboard.js"></script>
 </body>
 </html>
