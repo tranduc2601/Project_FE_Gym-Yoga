@@ -84,3 +84,24 @@ table tr:last-child td { border-bottom: none; }
 .pagination li a:hover { background-color: #e9ecef; border-color: #adb5bd; }
 .pagination li.active span { background-color: #0d6efd; color: #fff; border-color: #0d6efd; cursor: default; }
 .pagination li.disabled span, .pagination li.disabled a { color: #6c757d; background-color: #f8f9fa; border-color: #dee2e6; cursor: not-allowed; pointer-events: none; }
+/* Thêm vào dashboard.css nếu muốn style nút sửa riêng */
+.table-container .action-buttons .btn-edit {
+    background-color: #ffc107; /* Màu vàng ví dụ */
+    color: #333;
+    border: none;
+    padding: 5px 8px;
+    font-size: 0.85em;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle; /* Căn chỉnh */
+}
+.table-container .action-buttons .btn-edit:hover {
+    background-color: #e0a800;
+}
+
+/* Điều chỉnh khoảng cách nếu cần */
+.table-container .action-buttons button + button,
+.table-container .action-buttons button + span,
+.table-container .action-buttons span + button {
+    margin-left: 5px;
+}
