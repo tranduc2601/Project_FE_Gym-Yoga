@@ -1,9 +1,9 @@
 let scheduleData = JSON.parse(localStorage.getItem("schedules")) || [];
 
 function updateStats() {
-  const gym = scheduleData.filter(s => s.type === "Gym").length;
-  const yoga = scheduleData.filter(s => s.type === "Yoga").length;
-  const zumba = scheduleData.filter(s => s.type === "Zumba").length;
+  const gym = scheduleData.filter((s) => s.type === "Gym").length;
+  const yoga = scheduleData.filter((s) => s.type === "Yoga").length;
+  const zumba = scheduleData.filter((s) => s.type === "Zumba").length;
 
   document.getElementById("gymCount").textContent = gym;
   document.getElementById("yogaCount").textContent = yoga;
@@ -18,18 +18,20 @@ function renderChart(gym, yoga, zumba) {
     type: "bar",
     data: {
       labels: ["Gym", "Yoga", "Zumba"],
-      datasets: [{
-        label: "Số lượng lịch",
-        data: [gym, yoga, zumba],
-        backgroundColor: ["#3b82f6", "#10b981", "#a855f7"]
-      }]
+      datasets: [
+        {
+          label: "Số lượng lịch",
+          data: [gym, yoga, zumba],
+          backgroundColor: ["#3b82f6", "#10b981", "#a855f7"],
+        },
+      ],
     },
     options: {
       responsive: true,
       plugins: {
-        legend: { display: false }
-      }
-    }
+        legend: { display: false },
+      },
+    },
   });
 }
 
@@ -39,14 +41,16 @@ function renderTable() {
   const email = document.getElementById("emailSearch").value.toLowerCase();
   const date = document.getElementById("dateFilter").value;
 
-  const filtered = scheduleData.filter(item => {
+  const filtered = scheduleData.filter((item) => {
     const matchType = !type || item.type === type;
     const matchEmail = !email || item.email.toLowerCase().includes(email);
     const matchDate = !date || item.date === date;
     return matchType && matchEmail && matchDate;
   });
 
-  table.innerHTML = filtered.map(item => `
+  table.innerHTML = filtered
+    .map(
+      (item) => `
     <tr>
       <td>${item.type}</td>
       <td>${item.date}</td>
@@ -55,12 +59,14 @@ function renderTable() {
       <td>${item.email}</td>
       <td><button onclick="deleteRow('${item.id}')">Xoá</button></td>
     </tr>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
 function deleteRow(id) {
   if (confirm("Bạn có chắc chắn xoá không?")) {
-    scheduleData = scheduleData.filter(item => item.id !== id);
+    scheduleData = scheduleData.filter((item) => item.id !== id);
     localStorage.setItem("schedules", JSON.stringify(scheduleData));
     renderTable();
     updateStats();

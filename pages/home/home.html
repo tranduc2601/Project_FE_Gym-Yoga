@@ -1,98 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gym Management - Trang chủ</title>
-    <link rel="stylesheet" href="../../common/css/base.css"> <link rel="stylesheet" href="home.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="../../common/css/base.css" />
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <p>GYM MANAGEMENT</p>
-            </div>
-            <nav class="main-nav">
-                 <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="../schedule/schedule.html">Lịch tập</a></li>
-                    <li id="user-info" style="display: none;">
-                        <span>Chào, <strong id="username"></strong>!</span>
-                        <a href="../dashboard/dashboard.html" id="manage-link" style="display: none;">Quản lý</a>
-                        <button id="logout-button">Đăng xuất</button>
-                    </li>
-                    <li id="login-link-li">
-                        <a href="../login/login.html" id="login-link">Đăng nhập</a>
-                    </li>
-                </ul>
-            </nav>
+      <div class="container header-content">
+        <div class="logo">
+          <p>GYM MANAGEMENT</p>
         </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="../schedule/schedule.html">Lịch tập</a></li>
+            <li id="user-info" style="display: none">
+              <span>Chào, <strong id="username"></strong>!</span>
+              <a
+                href="../dashboard/dashboard.html"
+                id="manage-link"
+                style="display: none"
+                >Quản lý</a
+              >
+              <button id="logout-button">Đăng xuất</button>
+            </li>
+            <li id="login-link-li">
+              <a href="../login/login.html" id="login-link">Đăng nhập</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-overlay">
-                <div class="container hero-text">
-                    <h1>Welcome to Our Gym</h1>
-                    <p>Transform Your Body, Transform Your Life</p>
-                    <a href="../schedule/schedule.html" class="btn btn-primary">Bắt đầu ngay</a>
-                </div>
-            </div>
-        </section>
+      <section class="hero-section">
+        <div class="hero-overlay">
+          <div class="container hero-text">
+            <h1>Welcome to Our Gym</h1>
+            <p>Transform Your Body, Transform Your Life</p>
+            <a href="../schedule/schedule.html" class="btn btn-primary"
+              >Bắt đầu ngay</a
+            >
+          </div>
+        </div>
+      </section>
 
-        <section class="popular-classes-section">
-            <div class="container">
-                <h2>Các lớp học phổ biến</h2>
-                <div class="classes-grid" id="popular-classes-container">
-                    <p style="text-align: center; color: #6c757d;">Đang tải danh sách lớp học...</p>
-                </div>
-                <nav class="home-pagination-container" aria-label="Class pagination">
-                    <ul class="home-pagination" id="home-pagination-controls"></ul>
-                </nav>
-            </div>
-        </section>
+      <section class="popular-classes-section">
+        <div class="container">
+          <h2>Các lớp học phổ biến</h2>
+          <div class="classes-grid" id="popular-classes-container">
+            <p style="text-align: center; color: #6c757d">
+              Đang tải danh sách lớp học...
+            </p>
+          </div>
+          <nav class="home-pagination-container" aria-label="Class pagination">
+            <ul class="home-pagination" id="home-pagination-controls"></ul>
+          </nav>
+        </div>
+      </section>
     </main>
 
     <footer class="main-footer">
-       <div class="container footer-grid"> <div class="footer-column"><h4>Về chúng tôi</h4><p>Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.</p></div> <div class="footer-column"><h4>Liên hệ</h4><p>Email: contact@gym.com<br> Phone: (123) 456-7890<br> Địa chỉ: 123 Đường ABC, Quận XYZ</p></div> <div class="footer-column"><h4>Theo dõi</h4><div class="social-links"> <a href="https://www.facebook.com/rikkeisofthochiminh?locale=vi_VN">Facebook</a> <a href="https://www.youtube.com/@Rikkeisoft">Youtube</a> <a href="https://www.linkedin.com/company/rikkeisoft/?originalSubdomain=vn">LinkedId</a></div></div> </div> <div class="copyright-bar"><div class="container"><p>© 2024 Gym Management. All rights reserved.</p></div></div>
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <h4>Về chúng tôi</h4>
+          <p>
+            Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các
+            trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Liên hệ</h4>
+          <p>
+            Email: contact@gym.com<br />
+            Phone: (123) 456-7890<br />
+            Địa chỉ: 123 Đường ABC, Quận XYZ
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Theo dõi</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/rikkeisofthochiminh?locale=vi_VN"
+              >Facebook</a
+            >
+            <a href="https://www.youtube.com/@Rikkeisoft">Youtube</a>
+            <a
+              href="https://www.linkedin.com/company/rikkeisoft/?originalSubdomain=vn"
+              >LinkedId</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <div class="container">
+          <p>© 2024 Gym Management. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <div id="booking-modal-on-home" class="modal">
-        <div class="modal-content">
-            <span class="close-button home-modal-close">×</span>
-            <h2 id="booking-modal-title">Đặt Lịch Tập</h2>
-            <form id="booking-modal-form">
-                <div class="form-group"> <label for="booking-class-type">Chọn lớp học:</label> <select id="booking-class-type" required> <option value="">-- Đang tải dịch vụ... --</option> </select> </div>
-                <div class="form-group"> <label for="booking-schedule-date">Chọn ngày tập:</label> <input type="date" id="booking-schedule-date" required> </div>
-                <div class="form-group"> <label for="booking-schedule-time">Chọn khung giờ:</label> <select id="booking-schedule-time" required> <option value="">-- Chọn giờ --</option> <option value="06:00 - 07:00">06:00 - 07:00</option> <option value="07:00 - 08:00">07:00 - 08:00</option> <option value="08:00 - 09:00">08:00 - 09:00</option> <option value="17:00 - 18:00">17:00 - 18:00</option> <option value="18:00 - 19:00">18:00 - 19:00</option> <option value="19:00 - 20:00">19:00 - 20:00</option> </select> </div>
-                <div class="form-group"> <label for="booking-full-name">Họ tên:</label> <input type="text" id="booking-full-name" placeholder="Họ tên của bạn" required readonly> </div>
-                <div class="form-group"> <label for="booking-email">Email:</label> <input type="email" id="booking-email" placeholder="Email của bạn" required readonly> </div>
-                <div class="form-actions"> <button type="submit" class="btn btn-primary">Xác nhận Đặt Lịch</button> <button type="button" class="btn btn-secondary home-modal-close">Hủy</button> </div>
-                 <p id="booking-modal-error" class="error-message"></p>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-button home-modal-close">×</span>
+        <h2 id="booking-modal-title">Đặt Lịch Tập</h2>
+        <form id="booking-modal-form">
+          <div class="form-group">
+            <label for="booking-class-type">Chọn lớp học:</label>
+            <select id="booking-class-type" required>
+              <option value="">-- Đang tải dịch vụ... --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="booking-schedule-date">Chọn ngày tập:</label>
+            <input type="date" id="booking-schedule-date" required />
+          </div>
+          <div class="form-group">
+            <label for="booking-schedule-time">Chọn khung giờ:</label>
+            <select id="booking-schedule-time" required>
+              <option value="">-- Chọn giờ --</option>
+              <option value="06:00 - 07:00">06:00 - 07:00</option>
+              <option value="07:00 - 08:00">07:00 - 08:00</option>
+              <option value="08:00 - 09:00">08:00 - 09:00</option>
+              <option value="17:00 - 18:00">17:00 - 18:00</option>
+              <option value="18:00 - 19:00">18:00 - 19:00</option>
+              <option value="19:00 - 20:00">19:00 - 20:00</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="booking-full-name">Họ tên:</label>
+            <input
+              type="text"
+              id="booking-full-name"
+              placeholder="Họ tên của bạn"
+              required
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="booking-email">Email:</label>
+            <input
+              type="email"
+              id="booking-email"
+              placeholder="Email của bạn"
+              required
+              readonly
+            />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              Xác nhận Đặt Lịch
+            </button>
+            <button type="button" class="btn btn-secondary home-modal-close">
+              Hủy
+            </button>
+          </div>
+          <p id="booking-modal-error" class="error-message"></p>
+        </form>
+      </div>
     </div>
 
     <div id="login-prompt-modal" class="modal">
-        <div class="modal-content small">
-            <span class="close-button login-prompt-close">×</span>
-            <h2>Yêu cầu Đăng nhập</h2>
-            <p>Vui lòng đăng nhập hoặc tạo tài khoản để có thể đặt lịch tập.</p>
-            <div class="form-actions" style="justify-content: center;"> <a href="../login/login.html" class="btn btn-primary">Đi đến Đăng nhập</a> <button type="button" class="btn btn-secondary login-prompt-close">Đóng</button> </div>
+      <div class="modal-content small">
+        <span class="close-button login-prompt-close">×</span>
+        <h2>Yêu cầu Đăng nhập</h2>
+        <p>Vui lòng đăng nhập hoặc tạo tài khoản để có thể đặt lịch tập.</p>
+        <div class="form-actions" style="justify-content: center">
+          <a href="../login/login.html" class="btn btn-primary"
+            >Đi đến Đăng nhập</a
+          >
+          <button type="button" class="btn btn-secondary login-prompt-close">
+            Đóng
+          </button>
         </div>
+      </div>
     </div>
 
     <div id="booking-success-modal" class="modal">
-        <div class="modal-content small">
-            <span class="close-button booking-success-close">×</span>
-            <h2>Đặt Lịch Thành Công!</h2>
-            <p>Yêu cầu đặt lịch của bạn đã được gửi. Vui lòng chờ quản trị viên duyệt.</p>
-            <p>Bạn có thể theo dõi trạng thái trong trang <a href="../schedule/schedule.html" style="color: #007bff; text-decoration: underline;">Lịch tập</a>.</p>
-            <div class="form-actions" style="justify-content: center;"> <button type="button" class="btn btn-primary booking-success-close">OK</button> </div>
+      <div class="modal-content small">
+        <span class="close-button booking-success-close">×</span>
+        <h2>Đặt Lịch Thành Công!</h2>
+        <p>
+          Yêu cầu đặt lịch của bạn đã được gửi. Vui lòng chờ quản trị viên
+          duyệt.
+        </p>
+        <p>
+          Bạn có thể theo dõi trạng thái trong trang
+          <a
+            href="../schedule/schedule.html"
+            style="color: #007bff; text-decoration: underline"
+            >Lịch tập</a
+          >.
+        </p>
+        <div class="form-actions" style="justify-content: center">
+          <button type="button" class="btn btn-primary booking-success-close">
+            OK
+          </button>
         </div>
+      </div>
     </div>
 
     <script src="home.js" defer></script>
-</body>
+  </body>
 </html>
