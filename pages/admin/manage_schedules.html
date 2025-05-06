@@ -1,101 +1,169 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - Quản lý Lịch User</title>
-    <link rel="stylesheet" href="../../common/css/base.css">
-    <link rel="stylesheet" href="manage_schedules.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../common/css/base.css" />
+    <link rel="stylesheet" href="manage_schedules.css" />
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container header-content">
-            <div class="logo"><p>GYM MANAGEMENT - ADMIN</p></div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../dashboard/dashboard.html">Dashboard Chính</a></li>
-                    <li><a href="../services/services.html">Quản lý Dịch vụ</a></li>
-                    <li><a href="manage_schedules.html" class="active">Quản lý Lịch User</a></li>
-                    <li><a href="../home/home.html">Trang chủ</a></li>
-                    <li><a href="../login/login.html">Đăng xuất</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container header-content">
+        <div class="logo"><p>GYM MANAGEMENT - ADMIN</p></div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="../dashboard/dashboard.html">Dashboard Chính</a></li>
+            <li><a href="../services/services.html">Quản lý Dịch vụ</a></li>
+            <li>
+              <a href="manage_schedules.html" class="active"
+                >Quản lý Lịch User</a
+              >
+            </li>
+            <li><a href="../home/home.html">Trang chủ</a></li>
+            <li><a href="../login/login.html">Đăng xuất</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="container">
-        <div class="page-header">
-            <h1 class="page-title">Quản lý Lịch Tập của User</h1>
-            </div>
+      <div class="page-header">
+        <h1 class="page-title">Quản lý Lịch Tập của User</h1>
+      </div>
 
-        <section class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Lớp học</th>
-                        <th>Ngày tập</th>
-                        <th>Khung giờ</th>
-                        <th>Họ tên</th>
-                        <th>Email</th>
-                        <th>Trạng thái</th>
-                        <th>Ghi chú</th>
-                        <th>Thao tác</th> <th>Xóa</th>     </tr>
-                </thead>
-                <tbody id="manage-schedule-list-body">
-                    <tr>
-                        <td colspan="9" style="text-align:center;">Đang tải dữ liệu...</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+      <section class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Lớp học</th>
+              <th>Ngày tập</th>
+              <th>Khung giờ</th>
+              <th>Họ tên</th>
+              <th>Email</th>
+              <th>Trạng thái</th>
+              <th>Ghi chú</th>
+              <th>Thao tác</th>
+              <th>Xóa</th>
+            </tr>
+          </thead>
+          <tbody id="manage-schedule-list-body">
+            <tr>
+              <td colspan="9" style="text-align: center">
+                Đang tải dữ liệu...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-        <nav class="pagination-container" aria-label="Page navigation">
-            <ul class="pagination" id="manage-pagination-controls">
-                </ul>
-        </nav>
-
+      <nav class="pagination-container" aria-label="Page navigation">
+        <ul class="pagination" id="manage-pagination-controls"></ul>
+      </nav>
     </main>
 
     <footer class="main-footer">
-         <div class="container footer-grid"> <div class="footer-column"><h4>Về chúng tôi</h4><p>Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.</p></div> <div class="footer-column"><h4>Liên hệ</h4><p>Email: contact@gym.com<br> Phone: (123) 456-7890<br> Địa chỉ: 123 Đường ABC, Quận XYZ</p></div> <div class="footer-column"><h4>Theo dõi</h4><div class="social-links"> <a href="#">Facebook</a> <a href="#">Youtube</a> <a href="#">LinkedId</a></div></div> </div> <div class="copyright-bar"><div class="container"><p>© 2024 Gym Management. All rights reserved.</p></div></div>
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <h4>Về chúng tôi</h4>
+          <p>
+            Gym Management - Nơi bạn bắt đầu hành trình fitness của mình với các
+            trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên nghiệp.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Liên hệ</h4>
+          <p>
+            Email: contact@gym.com<br />
+            Phone: (123) 456-7890<br />
+            Địa chỉ: 123 Đường ABC, Quận XYZ
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Theo dõi</h4>
+          <div class="social-links">
+            <a href="#">Facebook</a> <a href="#">Youtube</a>
+            <a href="#">LinkedId</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <div class="container">
+          <p>© 2024 Gym Management. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <div id="edit-schedule-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button edit-modal-close">×</span>
-            <h2 id="edit-modal-title">Sửa Lịch Tập User</h2>
-            <form id="edit-schedule-form">
-                <input type="hidden" id="edit-schedule-id">
-                <div class="form-group"> <label for="edit-class-type">Lớp học:</label> <select id="edit-class-type" required></select> </div>
-                <div class="form-group"> <label for="edit-schedule-date">Ngày tập:</label> <input type="date" id="edit-schedule-date" required> </div>
-                <div class="form-group"> <label for="edit-schedule-time">Khung giờ:</label> <select id="edit-schedule-time" required></select> </div>
-                <div class="form-group"> <label for="edit-full-name">Họ tên:</label> <input type="text" id="edit-full-name" required> </div>
-                <div class="form-group"> <label for="edit-email">Email:</label> <input type="email" id="edit-email" required> </div>
-                <div class="form-group"> <label for="edit-schedule-note">Ghi chú (Admin):</label> <textarea id="edit-schedule-note" rows="2"></textarea></div>
-                <div class="form-actions"> <button type="submit" class="btn btn-primary">Lưu thay đổi</button> </div>
-                 <p id="edit-modal-error" class="error-message"></p>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-button edit-modal-close">×</span>
+        <h2 id="edit-modal-title">Sửa Lịch Tập User</h2>
+        <form id="edit-schedule-form">
+          <input type="hidden" id="edit-schedule-id" />
+          <div class="form-group">
+            <label for="edit-class-type">Lớp học:</label>
+            <select id="edit-class-type" required></select>
+          </div>
+          <div class="form-group">
+            <label for="edit-schedule-date">Ngày tập:</label>
+            <input type="date" id="edit-schedule-date" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-schedule-time">Khung giờ:</label>
+            <select id="edit-schedule-time" required></select>
+          </div>
+          <div class="form-group">
+            <label for="edit-full-name">Họ tên:</label>
+            <input type="text" id="edit-full-name" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-schedule-note">Ghi chú (Admin):</label>
+            <textarea id="edit-schedule-note" rows="2"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+          </div>
+          <p id="edit-modal-error" class="error-message"></p>
+        </form>
+      </div>
     </div>
 
     <div id="note-modal" class="modal">
-        <div class="modal-content small">
-            <span class="close-button note-modal-close">×</span>
-            <h2 id="note-modal-title">Thêm/Sửa Ghi Chú</h2>
-            <form id="note-form">
-                <input type="hidden" id="note-schedule-id">
-                <div class="form-group">
-                    <label for="schedule-note-input" style="text-align:left;">Nội dung ghi chú:</label>
-                    <textarea id="schedule-note-input" rows="4" style="width: 100%; font-size: 1em; padding: 8px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-                </div>
-                <div class="form-actions" style="justify-content: center;">
-                    <button type="submit" class="btn btn-primary">Lưu Ghi Chú</button>
-                    <button type="button" class="btn btn-secondary note-modal-close">Hủy</button>
-                </div>
-            </form>
-        </div>
+      <div class="modal-content small">
+        <span class="close-button note-modal-close">×</span>
+        <h2 id="note-modal-title">Thêm/Sửa Ghi Chú</h2>
+        <form id="note-form">
+          <input type="hidden" id="note-schedule-id" />
+          <div class="form-group">
+            <label for="schedule-note-input" style="text-align: left"
+              >Nội dung ghi chú:</label
+            >
+            <textarea
+              id="schedule-note-input"
+              rows="4"
+              style="
+                width: 100%;
+                font-size: 1em;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+              "
+            ></textarea>
+          </div>
+          <div class="form-actions" style="justify-content: center">
+            <button type="submit" class="btn btn-primary">Lưu Ghi Chú</button>
+            <button type="button" class="btn btn-secondary note-modal-close">
+              Hủy
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="manage_schedules.js" defer></script>
-</body>
-</html>
+  </body>
+</html> -->
