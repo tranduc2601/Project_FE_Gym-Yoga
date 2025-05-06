@@ -26,30 +26,10 @@
             Đặt lịch cho Khách Hàng
           </button>
         </div>
-        <section class="stats-container">
-          <div class="stat-box">
-            <p>Tổng số lịch Gym</p>
-            <span id="gymCount">0</span>
-          </div>
-          <div class="stat-box">
-            <p>Tổng số lịch Yoga</p>
-            <span id="yogaCount">0</span>
-          </div>
-          <div class="stat-box">
-            <p>Tổng số lịch Zumba</p>
-            <span id="zumbaCount">0</span>
-          </div>
+        <section class="stats-container" id="stats-container">
           <div class="stat-box">
             <p>Lịch chờ duyệt</p>
             <span id="pendingCount">0</span>
-          </div>
-          <div class="stat-box">
-            <p>Lịch đã duyệt</p>
-            <span id="approvedCount">0</span>
-          </div>
-          <div class="stat-box">
-            <p>Lịch đã hủy</p>
-            <span id="cancelledCount">0</span>
           </div>
         </section>
         <section class="chart-container"><canvas id="chart"></canvas></section>
@@ -60,9 +40,6 @@
               <label for="classTypeFilter">Lớp học</label>
               <select id="classTypeFilter">
                 <option value="">Tất cả</option>
-                <option value="Gym">Gym</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Zumba">Zumba</option>
               </select>
             </div>
             <div class="filter-item">
